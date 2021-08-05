@@ -1,0 +1,22 @@
+while True:
+    choice = input('Are you John? ')
+    if (choice != 'yes' and choice != 'Yes' and choice != 'YES'):
+        continue
+    password = input('Oh, hey John - what is the password? You know; the fishy one! ')
+    error = 0
+    while password != 'swordfish':
+        error = error + 1
+        if error == 1:
+            password = input('Try again, you have gotten it wrong. ')
+        elif error <= 5: 
+            password = input('Try again, you have gotten it wrong ' + str(error) + ' times, what happened to your memory? ')
+        elif error < 9 and error > 5:
+            password = input('Come on, bruh, you have gotten it wrong ' + str(error) + ' times, what is wrong with you? ')
+        elif error == 9:
+            password = input('John, listen carefully, you have gotten it wrong ' + str(error) + 
+                             ' times, this is your last opportunity. ')
+        elif error == 10:
+            print('John, sweetie, you have gotten it wrong ' + str(error) + ' times, come back tomorrow.')
+    if password == 'swordfish':
+        break
+print('Oh, hahaha, welcome back!')
