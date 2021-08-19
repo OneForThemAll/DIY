@@ -1,0 +1,137 @@
+import time
+
+first_name = ['John', 'Mary']
+last_name = ['Hot Body', 'Steamy Lips']
+
+password = 'swordfish'
+secret_password = 'tuna'
+master_password = 'bacon'
+
+john_fav_color = 'violet'
+john_fav_flower = 'lilac'
+john_fav_animal = 'fish'
+
+mary_dis_color = 'gray'
+mary_dis_flower = 'holly'
+mary_dis_animal = 'elephant'
+
+def activate_code(color):
+    if color == 'red':
+        status = 0
+        print('*ACTIVATING LOCKDOWN MODE AND EMPLOYING TROOPS TO SEARCH FOR JOHN IN 10 SECONDS.*')
+        while status != 'he_is_ok':
+            time.sleep(10)
+            print('*JOHN IS IN DANGER, EVERYONE DRAG YOUR ASSESS OUT OF THOSE CHAIRS AND RESCUE HIM NOW. THERE WILL NOT BE ANOTHER WARNING. EVERYONE WHO CHOOSES TO STAY INDOORS WILL BE REMOVED FROM THE LIST. I AM LOOKING AT YOU MARY.*')
+            time.sleep(5)
+            print('*BEEP BEEP BEEP*')
+            time.sleep(5)
+            print('*JOHN IS MISSING*')
+            time.sleep(10)
+            status = input('*STATUS UPDATE????*')
+            continue
+        print('*LOCKDOWN DISABLED, JOHN IS SAFE NOW.*')
+
+    if color == 'orange':
+        i = 0
+        sus = 0
+        for i in range(4):
+            if i == 1:
+                print('Hi John, what is your favorite color?')
+                chosen_color = input()
+                if chosen_color != john_fav_color:
+                    sus = sus + 1
+                    print('Oh, that is new!')
+            if i == 2:
+                print('What is your favorite flower?')
+                chosen_flower = input()
+                if chosen_flower != john_fav_color:
+                    sus = sus + 1
+                    print('Haha, living and learning, I guess!')
+            if i == 3:
+                print('Hmm, what about your favorite animal?')
+                chosen_animal = input()
+                if chosen_animal != john_fav_animal:
+                    sus = sus + 1
+                    print('That I would never have guessed!')
+        if sus == 3:
+            activate_code('red')
+        else: 
+            print('You scared me for a second there, using our least used password to enter, come on in and have fun!')
+     
+    if color == 'gray':
+        status = 0
+        while status != 'john_found_mary':
+            time.sleep(5)
+            print('*beep*')
+            time.sleep(4)
+            print('*beep*')
+            time.sleep(5)
+            print('*At your own leisure, please look for Mary.*')
+            time.sleep(6)
+            print('*She was last reported seen at the beach, that must be somewhere worthwhile to search.*')
+            time.sleep(10)
+            status = input('*Any update on her whereabouts?*')
+            continue
+        print('Ohhh John, if we did not have you among us!! I am so proud of you *wink* *wink*')
+        
+    if color == 'blue':
+        i = 0
+        indifference = 0
+        for i in range(4):
+            if i == 1:
+                print('Supposed Mary, what is your most disliked color')
+                chosen_color = input()
+                if chosen_color != mary_dis_color:
+                    indifference = indifference + 1
+                    print('You have enough IQ to change your mind??')
+            if i == 2:
+                print('Your least liked flower...')
+                chosen_flower = input()
+                if chosen_flower != mary_dis_color:
+                    indifference = indifference + 1
+                    print('Wow, you never seize to amaze me.')
+            if i == 3:
+                print('Hmm, what animal you are most afraid of?')
+                chosen_animal = input()
+                if chosen_animal != mary_dis_animal:
+                    indifference = indifference + 1
+                    print('Okay, turn 180 degrees and walk that way.')
+        if indifference == 3:
+            activate_code('gray')
+        else: 
+            print('Oh well, the door is still open, after all you did get the password right.')
+
+name = input('First and Last Name, please!')
+if name == 'John Hot Body':
+    attempt = input('You are early to the party, John. Your voice, sounds ruskier than usual. I mean- nothing personal, but what is the password?')
+    if attempt == password:
+        print('Come on right in! I was wondering if- oh you left.')
+    elif attempt == secret_password:
+        activate_code('orange')
+    else:
+        activate_code('red')
+elif name == 'Mary Steamy Lips':
+    attempt = input('Mary. It is you. Once again. You can only enter with a password. Hopefully Alzheimer has hit you already...')
+    if attempt == password:
+        print('I guess it has not, the door is open.')
+    elif attempt == secret_password:
+        activate_code('blue')
+    else:
+        activate_code('gray')
+
+        ### adiciona pra se a pessoa estiver na lista, msm se n for o john ou a mary, vao poder entrar.
+
+else:
+    print('You are not in the list, however if you know the golden password, you can become one of us!')
+    time.sleep(7)
+    attempt = input('So what do you say is the password?')
+    if attempt != master_password:
+        print('No can do, the exit is the same way as the entrance.')
+    if attempt == master_password:
+        newcomer_fn = input('And what would your first name be? This will enter our database of course.')
+        time.sleep(3)
+        newcomer_ln = input('Welcome ' + newcomer_fn + ', what would you say is your last name?')
+        time.sleep(5)
+        first_name.append(newcomer_fn)
+        last_name.append(newcomer_ln)
+        print("So happy to have you alongside us, for future reference, the password usually is 'swordfish'.")
