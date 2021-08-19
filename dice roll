@@ -1,0 +1,48 @@
+import random as rd
+
+def dice_choice(dice):
+    if dice == 'd6' or dice == 'D6' or dice == '6':
+        d6 = rd.randint(1, 6)
+        print('You have rolled a ' + str(d6) + '.')
+    elif dice == 'd12' or dice == 'D12' or dice == '12':
+        d12 = rd.randint(1, 12)
+        print('You have rolled a ' + str(d12) + '.')
+    elif dice == 'd20' or dice == 'D20' or dice == '20':
+        d20 = rd.randint(1, 20)
+        if d20 == 1:
+            print('Erhm, I hate to break it to you buddy, but... you got a critical fail, I mean - you did roll a 1...')
+        elif d20 == 20:
+            print('You have... oh wow, A CRITICAL ROLL, good job, you rolled a 20!')
+        else:
+            print('You have rolled a ' + str(d20) + '.')
+    else:
+        print('Unrecognized dice size mentioned.')
+        
+def dice_confirmation(die):
+    if die == 'd6' or die == 'D6' or die == '6':
+        die == 'd6'
+        print('You have chosen the ' + str(die) + '.')
+    elif die == 'd12' or die == 'D12' or die == '12':
+        die == 'd12'
+        print('You have chosen the ' + str(die) + '.')
+    elif die == 'd20' or die == 'D20' or die == '20':
+        die == 'd20'
+        print('You have chosen the ' + str(die) + '.')
+
+
+dice = input('What dice would you like to roll? (D6/D12/D20) -> ')
+
+while dice != 'd6' and dice != 'D6' and dice != '6' and dice != 'd12' and dice != 'D12' and dice != '12' and dice != 'd20' and dice != 'D20' and dice != '20':
+    dice = input('Unrecognized, try again -> ')
+
+dice_confirmation(dice)
+
+confirmation = str(input('The die is in your hands... ready to throw, are you sure soldier? (y/n)'))
+
+while confirmation != 'y' and confirmation != 'yes' and confirmation != 'Yes' and confirmation != 'YES' and confirmation != 'yeah' and confirmation != 'yup' and confirmation != 'of course' and confirmation != 'Of course' and confirmation != 'True' and confirmation != 'true' and confirmation != 'Y' and confirmation != 'TRUE': 
+    dice = input('What fighter thee seek then, adventurer? (d6/d12/d20) -> ')
+    while dice != 'd6' and dice != 'D6' and dice != '6' and dice != 'd12' and dice != 'D12' and dice != '12' and dice != 'd20' and dice != 'D20' and dice != '20':
+        dice = input('Unrecognized, try again -> ')
+    confirmation = str(input('You have chosen the dice ' + dice + ' do you wish to procceed? (y/n)'))
+
+dice_choice(dice)
