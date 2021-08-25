@@ -1,12 +1,10 @@
 ## Square Star Pattern
-
 ```
 Expectation: * * * *
              * * * *
              * * * *
              * * * *
 ```
-
 ```python
 h = int(input("What is the square's height? -> "))
 for i in range(h):
@@ -14,19 +12,20 @@ for i in range(h):
 ```
 
 ## Hollow Square Star Pattern
-
+```
 Expectation: * * * *
              *     *
              *     *
              * * * *
-
+```
+```python
 h = int(input("What is the square's height? -> "))
 for i in range(h):
     if i == 0 or i == h-1:
         print('* ' * h)
     else:
         print('* ' + '  ' * (h-2) + '*')
-        
+```
 #### Without 'if' statement
 
 h = int(input("What is the square's height? -> "))
