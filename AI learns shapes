@@ -1,14 +1,17 @@
 ## Square Star Pattern
 
+```
 Expectation: * * * *
              * * * *
              * * * *
              * * * *
-             
+```
+
+```python
 h = int(input("What is the square's height? -> "))
 for i in range(h):
     print('* ' * h)
-    
+```
 
 ## Hollow Square Star Pattern
 
